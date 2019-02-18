@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/books/main",
+    "pages/me/main",
+    "pages/comments/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ea5149",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ea5149",
+    "list": [
+      {
+        "pagePath": "pages/books/main",
+        "text": "图书"
+      },
+      {
+        "pagePath": "pages/comments/main",
+        "text": "评论"
+      },
+      {
+        "pagePath": "pages/me/main",
+        "text": "我的"
+      }
+    ]
+  }
+}

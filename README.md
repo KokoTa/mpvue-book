@@ -31,3 +31,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 3. 原生小程序有一个 globalData，在 mpvue 中可以用 vuex 实现
 
 4. 关于服务器及本地开发，见 [serever/README.md](server/README.md)
+
+5. 由于项目后台是基于腾讯云开发的(套用了其 node demo，而 demo 使用了 wafer2 sdk 来封装请求)，所以前端同样需要安装 [sdk](https://github.com/tencentyun/wafer2-client-sdk)
+
+6. 使用 SDK 进行登录，我们会发现 mysql 的 cauth 数据库中多了一条数据，即 sdk 帮我们解析了数据，不用自己折腾了

@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { get } from '../../utils/util';
 
 export default {
   data() {
@@ -13,10 +12,7 @@ export default {
       name: '我是图书页',
     };
   },
-  async created() {
-    const res = await get('/weapp/test');
-    console.log(res);
-  },
+  created() {},
 };
 </script>
 

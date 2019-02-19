@@ -35,8 +35,13 @@ export function get(url) {
  * @param {String} url 请求地址
  * @param {Object} data 请求数据体
  */
-export function post(url, data) {
-  return new Promise((resolve, reject) => {
+export function post() {}
 
+/**
+ * 成功的 toast
+ */
+export function showSuccess(message) {
+  wx.showToast({
+    title: message,
   });
 }

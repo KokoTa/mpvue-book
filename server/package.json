@@ -6,7 +6,8 @@
     "scripts": {
         "start": "pm2 start process.prod.json --no-daemon",
         "dev": "nodemon --config nodemon.json app.js",
-        "initdb": "npm install && node tools/initdb.js"
+        "initdb": "npm install && node tools/initdb.js",
+        "lint": "eslint --fix --ext .js,.vue src"
     },
     "author": "Jason",
     "license": "MIT",

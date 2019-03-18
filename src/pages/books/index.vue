@@ -7,13 +7,13 @@
 <script>
 
 export default {
-  data() {
+  data () {
     return {
-      name: '我是图书页',
-    };
+      name: '我是图书页'
+    }
   },
-  created() {},
-};
+  created () {}
+}
 </script>
 
 <style>

@@ -21,7 +21,7 @@ export function request (url, method, data) {
         if (res.data.code === 0) {
           resolve(res.data.data)
         } else {
-          reject(res.data)
+          reject(res.data.data)
         }
       },
       fail: (err) => {
@@ -44,6 +44,17 @@ export function post (url, data) {
 export function showSuccess (message) {
   wx.showToast({
     title: message
+  })
+}
+
+/**
+ * 弹出框 modal
+ */
+export function showModal (title, content) {
+  wx.showModal({
+    title,
+    content,
+    showCancel: false
   })
 }
 

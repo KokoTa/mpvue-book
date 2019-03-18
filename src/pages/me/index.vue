@@ -11,7 +11,7 @@
 
 <script>
 import YearProgress from '@/components/YearProgress'
-import { login, post } from '@/utils/util'
+import { login, post, showModal } from '@/utils/util'
 
 export default {
   components: {
@@ -43,12 +43,14 @@ export default {
       })
     },
     async _addBook (isbn) { // 添加图书
-      const res = await post('/weapp/addBook', { // 请求后端，后端请求豆瓣API，最后返回给前端
-        isbn,
-        openid: this.userInfo.openId
-      })
-      if (res.code === 0 && res.data.title) {
-        console.log(res)
+      try {
+        const res = await post('/weapp/addBook', { // 请求后端，后端请求豆瓣API，最后返回给前端
+          isbn,
+          openid: this.userInfo.openId
+        })
+        showModal('提示', res.message)
+      } catch (error) {
+        showModal('提示', error.message)
       }
     }
   },

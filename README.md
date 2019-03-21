@@ -35,3 +35,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 5. 由于项目后台是基于腾讯云开发的(套用了其 node demo，而 demo 使用了 wafer2 sdk 来封装请求)，所以前端同样需要安装 [sdk](https://github.com/tencentyun/wafer2-client-sdk)
 
 6. 使用 SDK 进行登录，我们会发现 mysql 的 cauth 数据库中多了一条数据，即 sdk 帮我们解析了数据，不用自己折腾了
+
+7. 当前 mpvue 版本为 1.0，现版本已更新至 2.0，且支持支付宝小程序、百度小程序等，更加强大啦！

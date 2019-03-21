@@ -2,7 +2,7 @@
  * ajax 服务路由集合
  */
 const router = require('koa-router')({
-    prefix: '/weapp'
+  prefix: '/weapp'
 })
 const controllers = require('../controllers')
 
@@ -37,5 +37,11 @@ router.post('/message', controllers.message.post)
 router.get('/test', controllers.test)
 // 添加书籍
 router.post('/addBook', controllers.addBook)
+// 书籍列表
+router.get('/bookList', controllers.bookList)
+// 书籍列详情
+router.get('/bookDetail', controllers.bookDetail)
+// 热门书籍(根据点击率)
+router.get('/top', controllers.top)
 
 module.exports = router

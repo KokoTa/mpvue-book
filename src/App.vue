@@ -19,4 +19,16 @@ export default {
 .btn-clear:after {
   border: 0;
 }
+
+/* 文本标题样式 */
+.text-primary {
+  font-weight: bold;
+  color: #ea5149;
+}
+.more {
+  text-align: center;
+  padding: 20rpx;
+  font-size: 14px;
+  background: #eee;
+}
 </style>

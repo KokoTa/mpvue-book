@@ -22,6 +22,7 @@ function getJSON (url) {
         }
       })
     })
+    .on('error', (e) => reject(e)) // 连接报错不处理会导致应用崩溃
   })
 }
 module.exports = async ctx => {
@@ -50,7 +51,19 @@ module.exports = async ctx => {
     }
 
     // 存储图书
-    const res = await getJSON(`https://api.douban.com/v2/book/isbn/${isbn}`)
+    let res
+    try {
+      res = await getJSON(`https://api.douban.com/v2/book/isbn/${isbn}`)
+    } catch (error) {
+      console.log(error)
+      ctx.state = {
+        code: -1,
+        data: {
+          message: error
+        }
+      }
+      return
+    }
 
     const rate = res.rating.average
     const { title, image, alt, publisher, summary, price } = res

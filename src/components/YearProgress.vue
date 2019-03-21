@@ -46,12 +46,6 @@ export default {
     percent () {
       return ((this.goneDay / this.getDaysOfYear()) * 100).toFixed(1)
     }
-  },
-  data () {
-    return {}
-  },
-  created () {
-
   }
 }
 </script>

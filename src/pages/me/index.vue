@@ -50,11 +50,11 @@ export default {
         })
         showModal('提示', res.message)
       } catch (error) {
-        showModal('提示', error.message)
+        showModal('提示', error.message.msg || error.message)
       }
     }
   },
-  onShow () {
+  async onShow () {
     // 每次进到该页都判断是否登录了
     const userInfo = wx.getStorageSync('userInfo')
     if (userInfo) {

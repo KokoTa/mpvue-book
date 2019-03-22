@@ -4,9 +4,16 @@ module.exports = async ctx => {
   const { id } = ctx.request.query
 
   try {
-    await mysql('books').where('id', id).increment('count', 1)
+    await mysql('books').where('id', id).increment('count', 1) // 递增访问量
+    const bookInfo = await mysql('books')
+      .select('books.*', 'csessioninfo.user_info')
+      .join('csessioninfo', 'books.openid', 'csessioninfo.open_id')
+      .where('id', id)
+      .first() // 获取书籍信息
+    bookInfo.user_info = JSON.parse(bookInfo.user_info)
+
     ctx.state.data = {
-      message: '访问量已递增'
+      data: bookInfo
     }
   } catch (err) {
     ctx.state = {

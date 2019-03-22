@@ -22,7 +22,6 @@ export default {
 
 /* 文本标题样式 */
 .text-primary {
-  font-weight: bold;
   color: #ea5149;
 }
 .more {

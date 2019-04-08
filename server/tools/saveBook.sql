@@ -1,4 +1,4 @@
--- 图书信息写入 Mysql
+-- 创建图书信息表
 create table books (
   id int not null auto_increment primary key,
   isbn varchar(20) not null,
@@ -13,3 +13,13 @@ create table books (
   tags varchar(100),
   author varchar(100)
 );
+
+-- 创建评论信息表
+create table comments (
+  id int not null auto_increment primary key,
+  openid varchar(50) not null,
+  bookid varchar(10) not null,
+  comment varchar(200) not null,
+  phone varchar(50),
+  location varchar(50)
+)

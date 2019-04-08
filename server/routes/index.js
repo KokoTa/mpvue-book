@@ -43,5 +43,9 @@ router.get('/bookList', controllers.bookList)
 router.get('/bookDetail', controllers.bookDetail)
 // 热门书籍(根据点击率)
 router.get('/top', controllers.top)
+// 添加评论
+router.post('/addComment', controllers.addComment)
+// 获取评论
+router.get('/commentList', controllers.commentList)
 
 module.exports = router

@@ -37,6 +37,7 @@ export default {
     }
   },
   methods: {
+    // 获取书籍列表，flag 指代是否首次加载
     async getBookList (flag) {
       wx.showNavigationBarLoading()
 

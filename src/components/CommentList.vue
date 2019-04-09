@@ -1,7 +1,7 @@
 <template>
   <div v-if="list.length" class="comment-list">
     <div class="title">评论列表</div>
-    <div v-for="(item, index) in list" class="comment" :key="index">
+    <div v-for="(item, index) in list" class="comment" :key="index" @click="handleCommentClick(item)">
       <div class="info">
         {{ item.location || '未知位置' }} - {{ item.phone || '未知型号' }}
       </div>
@@ -22,6 +22,18 @@ export default {
     list: {
       type: Array,
       defualt: []
+    },
+    type: {
+      type: String
+    }
+  },
+  methods: {
+    handleCommentClick (comment) {
+      if (this.type === 'user') {
+        wx.navigateTo({
+          url: `/pages/bookDetail/main?id=${comment.bookid}`
+        })
+      }
     }
   }
 }
@@ -29,10 +41,10 @@ export default {
 
 <style lang="scss" scoped>
 .comment-list {
-  font-size: 16px;
+  font-size: 14px;
   .title {
     background: #eee;
-    padding: 10rpx;
+    padding: 20rpx;
   }
   .comment {
     padding: 20rpx;
